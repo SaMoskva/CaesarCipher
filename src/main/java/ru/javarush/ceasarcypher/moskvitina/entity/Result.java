@@ -1,6 +1,7 @@
 package ru.javarush.ceasarcypher.moskvitina.entity;
 
 
+@SuppressWarnings("ClassCanBeRecord")
 public class Result {
     private final ResultCode resultCode;
 
