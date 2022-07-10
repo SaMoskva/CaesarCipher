@@ -1,7 +1,8 @@
 package ru.javarush.ceasarcypher.moskvitina;
 
-import ru.javarush.ceasarcypher.moskvitina.application.Application;
+import ru.javarush.ceasarcypher.moskvitina.toplevel.Application;
 import ru.javarush.ceasarcypher.moskvitina.controller.MainController;
+import ru.javarush.ceasarcypher.moskvitina.entity.Result;
 
 public class Runner {
     public static void main(String[] args) {

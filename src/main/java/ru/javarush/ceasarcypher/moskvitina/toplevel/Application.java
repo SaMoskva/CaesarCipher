@@ -1,6 +1,6 @@
-package ru.javarush.ceasarcypher.moskvitina.application;
+package ru.javarush.ceasarcypher.moskvitina.toplevel;
 
-import ru.javarush.ceasarcypher.moskvitina.Result;
+import ru.javarush.ceasarcypher.moskvitina.entity.Result;
 import ru.javarush.ceasarcypher.moskvitina.controller.MainController;
 
 import java.util.Arrays;
