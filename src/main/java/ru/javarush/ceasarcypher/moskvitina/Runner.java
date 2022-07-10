@@ -1,15 +1,18 @@
 package ru.javarush.ceasarcypher.moskvitina;
 
-import ru.javarush.ceasarcypher.moskvitina.toplevel.Application;
 import ru.javarush.ceasarcypher.moskvitina.controller.MainController;
-import ru.javarush.ceasarcypher.moskvitina.entity.Result;
+import ru.javarush.ceasarcypher.moskvitina.view.console.ConsoleApp;
+import ru.javarush.ceasarcypher.moskvitina.view.console.Menu;
+
+import java.util.Scanner;
 
 public class Runner {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Menu menu = new Menu(sc);
         MainController mainController = new MainController();
-        Application application = new Application(mainController);
-        Result result = application.run(args);
-        System.out.println(result);
+        ConsoleApp app = new ConsoleApp(mainController, menu);
+        app.run(args);
 
 
 

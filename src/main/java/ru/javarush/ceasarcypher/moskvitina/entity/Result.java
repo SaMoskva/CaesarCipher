@@ -1,5 +1,6 @@
 package ru.javarush.ceasarcypher.moskvitina.entity;
 
+
 public class Result {
     private final ResultCode resultCode;
 

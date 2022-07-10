@@ -1,9 +1,18 @@
 package ru.javarush.ceasarcypher.moskvitina.constants;
 
+import java.util.ArrayList;
+
 public class Dictionary {
     private static final String RUS = "йцукенгшщзхъфывапролджэячсмитьбю";
-    private static final String ENG = "qwertyuiopasdfghjklzxcvbnm";
-    private static final String DIGITS = "1234567890";
-    private static final String SYMBOLS = ",./@'!_-=+';{}[]";
-    public static final String ALPHABET = RUS + RUS.toUpperCase() + ENG + ENG.toUpperCase() + SYMBOLS + DIGITS;
+    private static final String SYMBOLS = ".,””:-!? ";
+    public static final char[] CHARS = (RUS + SYMBOLS).toCharArray();
+    public static final ArrayList<Character> charList = new ArrayList<>();
+
+    static{
+        for (char aChar : CHARS) {
+            charList.add(aChar);
+        }
+    }
+
+
 }

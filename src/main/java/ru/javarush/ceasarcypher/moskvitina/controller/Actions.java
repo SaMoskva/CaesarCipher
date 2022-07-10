@@ -4,8 +4,6 @@ import ru.javarush.ceasarcypher.moskvitina.commands.Action;
 import ru.javarush.ceasarcypher.moskvitina.commands.Decoder;
 import ru.javarush.ceasarcypher.moskvitina.commands.Encoder;
 
-import java.util.Locale;
-
 public enum Actions {
 
     ENCODE(new Encoder()),
