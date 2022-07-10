@@ -44,7 +44,7 @@ public interface Messages {
 
     String INCORRECT_SELECTION = RED + "\nЯ не могу это сделать. Попробуйте ещё раз.\n" + RESET ;
 
-    String OK_FORMAT = GREEN + "Выполнено, вроде вот так: %s" + RESET;
+    String OK_FORMAT = GREEN + "Вроде сделаль. %s" + RESET;
 
     String ERR_FORMAT = RED + "Это была роковая ошибка, а именно: %s" + RESET;
 }
