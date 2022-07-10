@@ -4,9 +4,8 @@ import ru.javarush.ceasarcypher.moskvitina.entity.Result;
 import ru.javarush.ceasarcypher.moskvitina.entity.ResultCode;
 import ru.javarush.ceasarcypher.moskvitina.exceptions.ApplicationException;
 import ru.javarush.ceasarcypher.moskvitina.util.PathFinder;
-
-import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,28 +17,40 @@ public class Encoder implements Action {
     public Result execute(String[] parameters) {
         //TODO логику зашифровки данных
         String txtFile = "".equals(parameters[0]) ? ENCODED : parameters[0];
-        String encodedFile = parameters[1].isEmpty() ? ENCODED : parameters[1];
+        String encodedFile = "".equals(parameters[1]) ? ENCODED : parameters[1];
         int key = Integer.parseInt(parameters[2].isEmpty() ? ENCODED : parameters[2]);
-        Path path = Path.of(PathFinder.getRoot() + txtFile);
-        List<Character> result = new ArrayList<>();
+        Path readFrom = Path.of(PathFinder.getRoot() + txtFile);
+        Path writeTo = Path.of(PathFinder.getRoot() + encodedFile);
+        List<String> result = new ArrayList<>();
+        String str = "";
         try {
-            FileReader reader = new FileReader(String.valueOf(path));
-            char[] buffer = new char[65536];
-            while (reader.ready()) {
-                int real = reader.read(buffer);
-            }
-            for (char c : buffer) {
-                char letter = Character.toLowerCase(c);
-                if (charList.contains(letter)) {
-                    result.add(letter);
+            List<String> strings = Files.readAllLines(readFrom);
+            for (String line : strings) {
+                String newLine = "";
+                for (int j = 0; j < line.length(); j++) {
+                    char letter = Character.toLowerCase(line.charAt(j));
+                    if (charList.contains(letter)) {
+                        int index = charList.indexOf(letter) + key;
+                        if (charList.indexOf(letter) == charList.size() - 1) {
+                            index = charList.size() - index;
+                        }
+                        char newLetter = charList.get(index);
+                        newLine += Character.toString(newLetter);
+                    }
                 }
+                result.add(newLine);
             }
-            System.out.println(result);
+
+
+            for (String s : result) {
+                str += s + "\n";
+                Files.writeString(writeTo, str);
+            }
 
         } catch (IOException e) {
-            throw new ApplicationException("Файл по пути " + path + " не найден!", e);
+            throw new ApplicationException("Файл по пути " + readFrom + " не найден!", e);
         }
-        return new Result(ResultCode.OK, "Файл по пути " + path + " прочитан");
+        return new Result(ResultCode.OK, "Файл по пути " + readFrom + " прочитан");
 
 
     }
