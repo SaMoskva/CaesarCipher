@@ -3,7 +3,7 @@ package ru.javarush.ceasarcypher.moskvitina.commands;
 import ru.javarush.ceasarcypher.moskvitina.entity.Result;
 import ru.javarush.ceasarcypher.moskvitina.entity.ResultCode;
 import ru.javarush.ceasarcypher.moskvitina.exceptions.ApplicationException;
-import ru.javarush.ceasarcypher.moskvitina.util.KeyCalculate;
+import ru.javarush.ceasarcypher.moskvitina.util.KeyCalculator;
 import ru.javarush.ceasarcypher.moskvitina.util.PathFinder;
 
 import java.io.IOException;
@@ -28,7 +28,7 @@ public class Bruteforce implements Action{
         try {
             List<String> allLines = Files.readAllLines(readFromFile);
             String checkedLine = allLines.get(0) + allLines.get(1) + allLines.get(2) + allLines.get(3) + allLines.get(4) + allLines.get(5) + allLines.get(6);
-            int key = KeyCalculate.getKey(checkedLine);
+            int key = KeyCalculator.getKey(checkedLine);
 
 
             for (String line : allLines) {

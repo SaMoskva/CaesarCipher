@@ -2,7 +2,7 @@ package ru.javarush.ceasarcypher.moskvitina.util;
 
 import static ru.javarush.ceasarcypher.moskvitina.constants.Dictionary.charList;
 
-public class KeyCalculate {
+public class KeyCalculator {
 
     public static int getKey(int key, int size) {
 

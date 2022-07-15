@@ -3,7 +3,7 @@ package ru.javarush.ceasarcypher.moskvitina.commands;
 import ru.javarush.ceasarcypher.moskvitina.entity.Result;
 import ru.javarush.ceasarcypher.moskvitina.entity.ResultCode;
 import ru.javarush.ceasarcypher.moskvitina.exceptions.ApplicationException;
-import ru.javarush.ceasarcypher.moskvitina.util.KeyCalculate;
+import ru.javarush.ceasarcypher.moskvitina.util.KeyCalculator;
 import ru.javarush.ceasarcypher.moskvitina.util.PathFinder;
 
 import java.io.IOException;
@@ -19,7 +19,7 @@ public class Encoder implements Action {
     public Result execute(String[] parameters) {
         String txtFile = "".equals(parameters[0]) ? ENCODED : parameters[0];
         String encodedFile = "".equals(parameters[1]) ? ENCODED : parameters[1];
-        int key = KeyCalculate.getKey(Integer.parseInt(parameters[2].isEmpty() ? ENCODED : parameters[2]), charList.size());
+        int key = KeyCalculator.getKey(Integer.parseInt(parameters[2].isEmpty() ? ENCODED : parameters[2]), charList.size());
         Path readFromFile = Path.of(PathFinder.getRoot() + txtFile);
         Path writeToFile = Path.of(PathFinder.getRoot() + encodedFile);
         StringBuilder result = new StringBuilder();
