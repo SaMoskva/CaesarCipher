@@ -45,7 +45,7 @@ public class Decoder implements Action {
         } catch (IOException e) {
             throw new ApplicationException("Файл по пути " + readFromFile + " не найден!", e);
         }
-        return new Result(ResultCode.OK, "Файлик вот тут лежит " + writeToFile);
+        return new Result(ResultCode.OK, "Расшифровка выполнена.\nФайлик вот тут лежит " + writeToFile);
 
 
     }

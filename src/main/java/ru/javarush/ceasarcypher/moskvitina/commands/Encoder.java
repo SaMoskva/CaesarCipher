@@ -45,7 +45,7 @@ public class Encoder implements Action {
         } catch (IOException e) {
             throw new ApplicationException("Файл по пути " + readFromFile + " не найден!", e);
         }
-        return new Result(ResultCode.OK, "Файлик вот тут лежит " + writeToFile);
+        return new Result(ResultCode.OK, "Зашифровка удалась.\nФайлик вот тут лежит " + writeToFile);
 
 
     }

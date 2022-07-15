@@ -46,7 +46,7 @@ public class Bruteforce implements Action{
                 result.append(newLine).append( "\n");
             }
             Files.writeString(writeToFile, result);
-            return new Result(ResultCode.OK, "Ключ = " + key + " Файлик вот тут лежит " + writeToFile);
+            return new Result(ResultCode.OK, "Взлом удался.\nКлюч = " + key + ". Файлик вот тут лежит " + writeToFile);
 
         } catch (IOException e) {
             throw new ApplicationException("Файл по пути " + readFromFile + " не найден!", e);
