@@ -1,13 +1,13 @@
 package ru.javarush.ceasarcypher.moskvitina.controller;
 
-import ru.javarush.ceasarcypher.moskvitina.commands.Action;
-import ru.javarush.ceasarcypher.moskvitina.commands.Decoder;
-import ru.javarush.ceasarcypher.moskvitina.commands.Encoder;
+import ru.javarush.ceasarcypher.moskvitina.commands.*;
 
 public enum Actions {
 
     ENCODE(new Encoder()),
-    DECODE(new Decoder());
+    DECODE(new Decoder()),
+    BRUTEFORCE(new Bruteforce()),
+    EXIT(new Exit());
 
     private final Action action;
 

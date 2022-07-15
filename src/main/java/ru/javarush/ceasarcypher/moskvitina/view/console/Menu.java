@@ -16,12 +16,16 @@ public class Menu {
     public String[] getArgs() {
         int mode = getMode(scanner);
         String[] args = new String[HEADERS[mode].length];
-        args[0] = HEADERS[mode][0][0];
-        for (int i = 1; i < args.length; i++) {
-            String header = HEADERS[mode][i][0];
-            System.out.println(header);
-            String input = scanner.nextLine();
-            args[i] = "".equals(input.trim()) ? STANDARD_PARAMETERS[mode][i][0] : input;
+        if(mode == 3){
+            System.exit(0);
+        } else {
+            args[0] = HEADERS[mode][0][0];
+            for (int i = 1; i < args.length; i++) {
+                String header = HEADERS[mode][i][0];
+                System.out.println(header);
+                String input = scanner.nextLine();
+                args[i] = "".equals(input.trim()) ? STANDARD_PARAMETERS[mode][i][0] : input;
+            }
         }
         return args;
     }
@@ -34,7 +38,8 @@ public class Menu {
             mode = switch (input) {
                 case "1" -> 0;
                 case "2" -> 1;
-                case "5" -> 2;
+                case "3" -> 2;
+                case "4" -> 3;
                 default -> {
                     System.out.println(INCORRECT_SELECTION);
                     yield -1;

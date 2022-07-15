@@ -19,7 +19,14 @@ public interface Messages {
             },
 
             {
-                    {"Выход"},
+                    {String.valueOf(Actions.BRUTEFORCE)},
+                    {"Введи полный путь к исходному файлу или нажмите Enter для дешифрования стандартного файла"},
+                    {"Введите полный путь к конечному файлу или нажмите Enter для стандартного пути дешифрованного файла"}
+            },
+
+            {
+                    {String.valueOf(Actions.EXIT)},
+                    {"Выход"}
             }
     };
 
@@ -40,7 +47,7 @@ public interface Messages {
 
     String MESSAGE_SELECT_MODE = LINE +
             PURPLE_BOLD + "\nЧто вы хотите сделать:\n" + CYAN +
-            "1. Зашифровать\n2. Дешифровать\n5. Выход\n" + RESET + LINE;
+            "1. Зашифровать\n2. Дешифровать\n3. Взлом\n4. Выход\n" + RESET + LINE;
 
     String INCORRECT_SELECTION = RED + "\nЯ не могу это сделать. Попробуйте ещё раз.\n" + RESET ;
 

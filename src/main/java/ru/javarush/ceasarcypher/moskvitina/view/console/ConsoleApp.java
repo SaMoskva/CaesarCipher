@@ -24,7 +24,8 @@ public class ConsoleApp {
             result = getResult(args);
             print(result);
             args = new String[0];
-        } while (result.getResultCode() == ResultCode.ERROR);
+
+        } while (result.getResultCode() == ResultCode.ERROR || result.getResultCode() == ResultCode.OK);
     }
 
     private Result getResult(String[] args){
