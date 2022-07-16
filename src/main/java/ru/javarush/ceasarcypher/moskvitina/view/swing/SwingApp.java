@@ -1,18 +1,15 @@
 package ru.javarush.ceasarcypher.moskvitina.view.swing;
 
-import ru.javarush.ceasarcypher.moskvitina.commands.Encoder;
+
 import ru.javarush.ceasarcypher.moskvitina.controller.MainController;
 import ru.javarush.ceasarcypher.moskvitina.exceptions.ApplicationException;
 import ru.javarush.ceasarcypher.moskvitina.util.PathFinder;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
-
-import static java.nio.file.Files.readAllLines;
 
 @SuppressWarnings("unused")
 public class SwingApp extends JFrame{
