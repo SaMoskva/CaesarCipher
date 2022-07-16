@@ -17,13 +17,9 @@ public class SwingApp extends JFrame{
     private JTextArea originalText;
     private JTextArea processedText;
     private JPanel topPanel;
-    private JPanel leftBottomPanel;
-    private JPanel rightBottomPanel;
     private JLabel pathText;
-    private JLabel commandText;
     private JTextField filePath;
     private JSpinner keyValue;
-    private JLabel key;
     private JLabel original;
     private JLabel processed;
     private JTextField originalFilePath;
@@ -31,6 +27,7 @@ public class SwingApp extends JFrame{
     private JButton encodeButton;
     private JButton decodeButton;
     private JButton bruteforceButton;
+    private JLabel key;
 
 
     public SwingApp(){
@@ -51,6 +48,7 @@ public class SwingApp extends JFrame{
         int i = 1;
         SpinnerModel value = new SpinnerNumberModel(i, min, max, step);
         keyValue.setModel(value);
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
     }
 
     private void initListeners() {
