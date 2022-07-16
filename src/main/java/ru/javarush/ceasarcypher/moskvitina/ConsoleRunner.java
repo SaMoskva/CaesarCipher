@@ -6,7 +6,7 @@ import ru.javarush.ceasarcypher.moskvitina.view.console.Menu;
 
 import java.util.Scanner;
 
-public class Runner {
+public class ConsoleRunner {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Menu menu = new Menu(sc);
